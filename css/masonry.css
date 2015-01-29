@@ -1,13 +1,12 @@
 .wrap {
 	width: 880px;
 	padding: 10px;
-	background: #EEE;
 	overflow: auto;
 }
 .box {
 	border: 1px solid #d4dcda;
 	border-radius: 8px;
-	width: 190px;
+	width: 200px;
 	margin: 5px;
 	padding: 10px;
 	float: left;
