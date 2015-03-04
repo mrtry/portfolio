@@ -1,0 +1,46 @@
+.tabmenu {
+	margin: 20% auto auto auto;
+	width:75%;
+	text-align:center;
+}
+ul{
+	margin:0 !important; 
+	padding:0 !important;}
+
+li{
+	list-style:none !important;
+}
+.tab{
+	text-align:center;
+	overflow:hidden;
+}
+.tab li{
+	background:#ccc; 
+	padding:5px 25px; 
+	margin-right:1px;
+   	margin-bottom: 10px;	
+	cursor:pointer;
+	display: inline-block;
+}
+.tab li.select {
+	background:#eee;
+}
+.tab ul{
+	margin: auto;
+}
+.tab-content li{
+	background:#8888888; 
+	padding:20px;
+}
+.hide {
+	display:none;
+}
+.tab-content img{
+	width: 20%;
+	min-width: 50px;
+	height: auto;
+	margin: 1px;
+	border: 1px solid #d4dcda;
+	border-radius: 8px;
+	display:inline-block;
+}

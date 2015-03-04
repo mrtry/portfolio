@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js demo-4">
+<html lang="ja" class="no-js demo-4">
 	<head>
 		<!-- meta/OGP-->
 		<meta charset="UTF-8" />
@@ -11,16 +11,17 @@
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="http://mrtry.me" />
 		<meta property="og:image" content="https://dl.dropboxusercontent.com/u/33568010/blog.mrtry.me/logo/symmt.png" />
-		<meta property="og:og:description" content="Shinnosuke Yamamoto's Portfolio Site" />
+		<meta property="og:description" content="Shinnosuke Yamamoto's Portfolio Site" />
 
 		<title>Roots | Shinnosuke Yamamoto's Portfolio Site</title>
 
-		<!-- CSS -->
+		<!-- CSS/js -->
 		<link rel="shortcut icon" href="../favicon.ico"> 
 		<link rel="stylesheet" type="text/css" href="css/default.css" />
 		<link rel="stylesheet" type="text/css" href="css/bookblock.css" />
-		<link rel="stylesheet" type="text/css" href="css/masonry.css" />
+		<link rel="stylesheet" type="text/css" href="css/tab.css" />
 		<link rel="stylesheet" type="text/css" href="css/demo4.css" />
+		<link rel="stylesheet" type="text/css" href="css/jquery.fs.boxer.css" />
 		<script src="js/modernizr.custom.js"></script>
 	</head>
 	<body>
@@ -36,10 +37,10 @@
 					</div>
 					<div class="bb-custom-side">
 						<ul>
-									<li><a href="#">Desigh</a></li>
-									<li><a href="#">Portfolio</a></li>
-									<li><a href="#">Profile</a></li>
-									<li><a href="#">Contacts</a></li>
+									<li><a id="desigh" href="#">Desigh</a></li>
+									<li><a id="portfolio" href="#">Portfolio</a></li>
+									<li><a id="profile" href="#">Profile</a></li>
+									<li><a id="contacts" href="#">Contacts</a></li>
 							</ul>
 						</div>
 					</div>
@@ -56,12 +57,43 @@
 							<h1>Portfolio</h1>
 						</div>
 						<div class="bb-custom-side">
-								<div class="box">
-								<p>てすと</p>
-							</div>
-							<div class="box">
-								<p>てすと</p>
-							</div>
+								<div class="tabmenu">
+									<ul class="tab">
+										<li class="select">Desigh</li>
+										<li>Program</li>
+										<li>Other</li>
+									</ul>
+									<div class="tab-content">
+											<div>
+												<a href="#logo" class="boxer"><img src="images/thumbnail/symmt_100x100.png" alt="My Logo"></a>
+												<div id="logo" style="display:none;">
+														<div class="content">
+																<section>
+																	<h2>Title</h2>
+																	<dl>
+																		<dt>Data</dt>		<dd>2000/00/00</dd>
+																		<dt>Skill</dt>		<dd>htlm,css,js</dd>
+																		<dt>Comment</dt>	<dd>coooooomment</dd>
+																	</dl>
+																</section>
+																<section>
+																	<img src="images/works/symmt.png" alt="logo">
+																</section>
+																</div>
+														</div>
+												<img src="images/thumbnail/symmt_100x100.png" alt="My Logo">
+												<img src="images/thumbnail/symmt_100x100.png" alt="My Logo">
+											</div>
+											<div class="hide">
+											
+											
+											</div>
+											<div class="hide">
+											
+											
+											</div>
+									</div>
+								</div>	
 						</div>
 					</div>
 					<div class="bb-item">
@@ -95,6 +127,7 @@
 		</div><!-- /container -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script src="js/jquerypp.custom.js"></script>
+		<script src="js/jquery.fs.boxer.min.js"></script>
 		<script src="js/jquery.bookblock.js"></script>
 		<script>
 			var Page = (function() {
@@ -104,7 +137,11 @@
 						$navNext : $( '#bb-nav-next' ),
 						$navPrev : $( '#bb-nav-prev' ),
 						$navFirst : $( '#bb-nav-first' ),
-						$navLast : $( '#bb-nav-last' )
+						$navLast : $( '#bb-nav-last' ),
+						$moveDesigh : $( '#desigh' ),
+						$movePortfolio : $( '#portfolio' ),
+						$moveProfile : $( '#profile' ),
+						$moveContacts : $( '#contacts' )
 					},
 					init = function() {
 						config.$bookBlock.bookblock( {
@@ -138,7 +175,27 @@
 							config.$bookBlock.bookblock( 'last' );
 							return false;
 						} );
-						
+
+						// links
+						config.$moveDesigh.on( 'click touchstart', function() {
+							config.$bookBlock.bookblock( 'jump', 2 );
+							return false;
+						} );
+
+						config.$movePortfolio.on( 'click touchstart', function() {
+							config.$bookBlock.bookblock( 'jump', 3 );
+							return false;
+						} );
+
+						config.$moveProfile.on( 'click touchstart', function() {
+							config.$bookBlock.bookblock( 'jump', 4 );
+							return false;
+						} );
+
+						config.$moveContacts.on( 'click touchstart', function() {
+							config.$bookBlock.bookblock( 'jump', 5 );
+							return false;
+						} );
 						// add swipe events
 						$slides.on( {
 							'swipeleft' : function( event ) {
@@ -175,9 +232,21 @@
 					return { init : init };
 
 			})();
-		</script>
-		<script>
-				Page.init();
+
+			
+			Page.init();
+
+			<!-- jQuery.tab -->
+			$(function() {
+					$('.tab li').click(function() {
+						var tabnum = $('.tab li').index(this);
+						$('.tab-content div').css('display','none');
+						$('.tab-content div').eq(tabnum).css('display','block');
+						$('.tab li').removeClass('select');
+						$(this).addClass('select')
+					});
+					$(".boxer").boxer();
+			});
 		</script>
 	</body>
 </html>
