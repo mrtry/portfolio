@@ -17,7 +17,7 @@ li{
 .tab li{
 	background:#ccc; 
 	padding:5px 25px; 
-	margin-right:1px;
+	margin-right:10px;
    	margin-bottom: 10px;	
 	cursor:pointer;
 	display: inline-block;
@@ -36,11 +36,12 @@ li{
 	display:none;
 }
 .tab-content img{
-	width: 20%;
-	min-width: 50px;
+	width: 30%;
+	min-width: 10px;
 	height: auto;
-	margin: 1px;
+	margin: 2px;
 	border: 1px solid #d4dcda;
 	border-radius: 8px;
 	display:inline-block;
 }
+
