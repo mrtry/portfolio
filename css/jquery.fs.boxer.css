@@ -12,7 +12,17 @@ dl dt{
 	margin: 0 0 0.8em;
 	width: 3em;
 	line-height: 1.3;
+	text-align: center;
 }
+
+section{
+	width: 90%;
+}
+
+dt{
+	font-weight:bold;
+}
+
 dl dd{
 	margin: 0 0 0.8em 3em;
 	line-height: 1.3;
