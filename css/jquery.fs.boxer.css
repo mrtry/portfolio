@@ -31,15 +31,21 @@ dl dd{
 	display: flex;
 }
 .content section{
+	position: relative;
 	flex: 1;
 }
 .content img{
-	display: block;
+border: 1px solid #d4dcda;
+	border-radius: 8px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 	width: auto;
 	height: 80%;
-	border: 1px solid #d4dcda;
-	border-radius: 8px;
 	margin: auto;
+
 }
 .boxer-lock {
   overflow: hidden !important;
